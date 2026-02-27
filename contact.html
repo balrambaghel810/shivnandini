@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Shivnandani Creations</title>
+    <meta
+      name="description"
+      content="Get in touch with Shivnandani Creations By Manisha Sharma for orders, bridal trousseau consultations and custom requests."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkTtPZ8QJukU0c7N2ZK0O3B1YBq2aO5bV3lYWp5qHuxZi1QK7Xo4A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["system-ui", "ui-sans-serif", "SF Pro Text", "Inter", "sans-serif"],
+              serif: ["\"Playfair Display\"", "ui-serif", "Georgia", "serif"],
+            },
+            colors: {
+              cream: "#fffaf4",
+              blush: "#fde7ec",
+              beige: "#f7eee6",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles/custom.css" />
+  </head>
+  <body class="bg-soft-premium min-h-screen text-black antialiased">
+    <div id="site-header"></div>
+
+    <main class="bg-white/70">
+      <section class="border-b border-black/5 bg-white/80">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-3">
+            <div class="space-y-4 lg:col-span-1" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-black/50">
+                Contact
+              </p>
+              <h1 class="font-serif text-2xl text-black sm:text-3xl">
+                We’d love to hear from you
+              </h1>
+              <p class="text-sm leading-relaxed text-black/75">
+                Reach out for product questions, bridal trousseau curation, bulk gifting, custom
+                sizing queries or styling advice. We usually respond within 24–48 hours.
+              </p>
+              <div class="space-y-2 text-sm text-black/70">
+                <p class="flex items-center gap-2">
+                  <i class="fa-regular fa-envelope text-black/60"></i>
+                  <span>support@shivnandanicreations.com</span>
+                </p>
+                <p class="flex items-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-black/60"></i>
+                  <span>WhatsApp styling support (link placeholder)</span>
+                </p>
+              </div>
+            </div>
+            <div class="lg:col-span-2" data-reveal>
+              <form
+                id="contact-form"
+                class="space-y-4 rounded-3xl border border-black/5 bg-white p-6 shadow-sm"
+              >
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="block text-xs font-semibold text-black/70">Full name</label>
+                    <input
+                      type="text"
+                      required
+                      class="focus-premium mt-1 w-full rounded-2xl border border-black/10 bg-white px-3 py-2 text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-black/70">Email</label>
+                    <input
+                      type="email"
+                      required
+                      class="focus-premium mt-1 w-full rounded-2xl border border-black/10 bg-white px-3 py-2 text-sm"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-black/70">What can we help with?</label>
+                  <select
+                    class="focus-premium mt-1 w-full rounded-2xl border border-black/10 bg-white px-3 py-2 text-sm text-black"
+                  >
+                    <option>Order enquiry</option>
+                    <option>Bridal trousseau</option>
+                    <option>Custom sizing</option>
+                    <option>Bulk / gifting</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-black/70">Message</label>
+                  <textarea
+                    rows="4"
+                    required
+                    class="focus-premium mt-1 w-full rounded-2xl border border-black/10 bg-white px-3 py-2 text-sm"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center gap-2 rounded-2xl bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  Send message
+                </button>
+                <p class="text-xs text-black/50">
+                  This is a demonstration form. Connect it to your email service or backend to start
+                  receiving messages.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.1.3/dist/motion.umd.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/data.products.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        SC.boot("contact");
+        var form = document.getElementById("contact-form");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            SC.ui.toast("Thank you for reaching out. We’ll get back shortly.");
+            form.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

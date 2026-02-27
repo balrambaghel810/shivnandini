@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop All — Shivnandani Creations</title>
+    <meta
+      name="description"
+      content="Browse all sarees, suits, dupattas, fabrics, kurtis, lehengas and bedding from Shivnandani Creations By Manisha Sharma."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkTtPZ8QJukU0c7N2ZK0O3B1YBq2aO5bV3lYWp5qHuxZi1QK7Xo4A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["system-ui", "ui-sans-serif", "SF Pro Text", "Inter", "sans-serif"],
+              serif: ["\"Playfair Display\"", "ui-serif", "Georgia", "serif"],
+            },
+            colors: {
+              cream: "#fffaf4",
+              blush: "#fde7ec",
+              beige: "#f7eee6",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles/custom.css" />
+  </head>
+  <body class="bg-soft-premium min-h-screen text-black antialiased">
+    <div id="site-header"></div>
+
+    <main class="bg-white/70">
+      <section class="border-b border-black/5 bg-white/80">
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div class="space-y-2" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-black/50">Shop</p>
+              <h1 class="font-serif text-2xl text-black sm:text-3xl">All products</h1>
+              <p class="max-w-md text-sm text-black/65">
+                Sarees, suits, dupattas, fabrics, lehengas, kurtis and bedding — curated in signature pastel shades.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 text-xs text-black/60" data-reveal>
+              <span class="inline-flex items-center gap-2 rounded-full bg-black px-3 py-1 text-white">
+                <i class="fa-solid fa-feather text-[10px]"></i>
+                Hand Woven Designers
+              </span>
+              <span class="rounded-full border border-black/10 bg-white px-3 py-1">
+                Premium pastel palette
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filters / Search / Sort -->
+      <section class="border-b border-black/5 bg-white/70">
+        <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div class="flex flex-1 items-center gap-2" data-reveal>
+              <div class="relative w-full">
+                <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-black/40">
+                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </span>
+                <input
+                  id="shop-search"
+                  type="search"
+                  placeholder="Search for sarees, suits, lehengas..."
+                  class="focus-premium w-full rounded-2xl border border-black/10 bg-white py-2 pl-8 pr-3 text-xs text-black placeholder:text-black/40 sm:text-sm"
+                />
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs" data-reveal>
+              <select
+                id="shop-category"
+                class="focus-premium min-w-[120px] rounded-2xl border border-black/10 bg-white px-3 py-2 text-xs text-black sm:text-sm"
+              >
+                <!-- Filled with categories via JS -->
+              </select>
+              <select
+                id="shop-sort"
+                class="focus-premium min-w-[140px] rounded-2xl border border-black/10 bg-white px-3 py-2 text-xs text-black sm:text-sm"
+              >
+                <option value="recommended">Recommended</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-2 text-xs text-black/55" id="shop-count" data-reveal></div>
+        </div>
+      </section>
+
+      <!-- Products grid -->
+      <section>
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <div id="shop-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <!-- Skeleton & products filled via shop.page.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.1.3/dist/motion.umd.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/data.products.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.page.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        SC.boot("shop");
+        if (SC.pages && typeof SC.pages.shop === "function") {
+          SC.pages.shop();
+        }
+      });
+    </script>
+  </body>
+</html>
