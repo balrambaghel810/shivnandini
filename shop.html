@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,9 +11,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkTtPZ8QJukU0c7N2ZK0O3B1YBq2aO5bV3lYWp5qHuxZi1QK7Xo4A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,8 +18,14 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ["system-ui", "ui-sans-serif", "SF Pro Text", "Inter", "sans-serif"],
-              serif: ["\"Playfair Display\"", "ui-serif", "Georgia", "serif"],
+              sans: [
+                "system-ui",
+                "ui-sans-serif",
+                "SF Pro Text",
+                "Inter",
+                "sans-serif",
+              ],
+              serif: ['"Playfair Display"', "ui-serif", "Georgia", "serif"],
             },
             colors: {
               cream: "#fffaf4",
@@ -41,20 +44,36 @@
     <main class="bg-white/70">
       <section class="border-b border-black/5 bg-white/80">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div
+            class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+          >
             <div class="space-y-2" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-black/50">Shop</p>
-              <h1 class="font-serif text-2xl text-black sm:text-3xl">All products</h1>
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.18em] text-black/50"
+              >
+                Shop
+              </p>
+              <h1 class="font-serif text-2xl text-black sm:text-3xl">
+                All products
+              </h1>
               <p class="max-w-md text-sm text-black/65">
-                Sarees, suits, dupattas, fabrics, lehengas, kurtis and bedding — curated in signature pastel shades.
+                Sarees, suits, dupattas, fabrics, lehengas, kurtis and bedding —
+                curated in signature pastel shades.
               </p>
             </div>
-            <div class="flex flex-wrap items-center gap-2 text-xs text-black/60" data-reveal>
-              <span class="inline-flex items-center gap-2 rounded-full bg-black px-3 py-1 text-white">
+            <div
+              class="flex flex-wrap items-center gap-2 text-xs text-black/60"
+              data-reveal
+            >
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-black px-3 py-1 text-white"
+              >
                 <i class="fa-solid fa-feather text-[10px]"></i>
                 Hand Woven Designers
               </span>
-              <span class="rounded-full border border-black/10 bg-white px-3 py-1">
+              <span
+                class="rounded-full border border-black/10 bg-white px-3 py-1"
+              >
                 Premium pastel palette
               </span>
             </div>
@@ -65,10 +84,14 @@
       <!-- Filters / Search / Sort -->
       <section class="border-b border-black/5 bg-white/70">
         <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div
+            class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between"
+          >
             <div class="flex flex-1 items-center gap-2" data-reveal>
               <div class="relative w-full">
-                <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-black/40">
+                <span
+                  class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-black/40"
+                >
                   <i class="fa-solid fa-magnifying-glass text-xs"></i>
                 </span>
                 <input
@@ -96,14 +119,21 @@
               </select>
             </div>
           </div>
-          <div class="mt-2 text-xs text-black/55" id="shop-count" data-reveal></div>
+          <div
+            class="mt-2 text-xs text-black/55"
+            id="shop-count"
+            data-reveal
+          ></div>
         </div>
       </section>
 
       <!-- Products grid -->
       <section>
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div id="shop-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div
+            id="shop-grid"
+            class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          >
             <!-- Skeleton & products filled via shop.page.js -->
           </div>
         </div>
